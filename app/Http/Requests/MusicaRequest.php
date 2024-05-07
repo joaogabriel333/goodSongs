@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class MusicaRequest extends FormRequest
 {
@@ -22,7 +24,22 @@ class MusicaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            
+                'titulo'=>'required|max:120|min:5|',
+                'duracao'=>'required',
+                'artista'=>'required',
+                'genero'=>'required',
+                'nacionalidade'=>'required',
+                'ano_lancamento'=>'required|date',
+                'album'=>''
+            
         ];
+    }
+
+    public function failedValidation(Validator $validator){
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'error' => $validator->errors()
+        ]));
     }
 }

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('musicas', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo', 120)->nullable(false);
+            $table->integer('duracao')->nullable(false);
+            $table->string('artista')->unique()->nullable(false);
+            $table->string('genero' )->unique()->nullable(false);
+            $table->string('nacionalidade')->nullable(false);
+            $table->date('ano_lancamenro')->nullable(false);
+            $table->string('album')->nullable(true);
             $table->timestamps();
         });
     }
