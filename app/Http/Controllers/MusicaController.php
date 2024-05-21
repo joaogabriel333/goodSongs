@@ -30,7 +30,7 @@ class MusicaController extends Controller
    
     public function retornarTodasMusicas()
     {
-        $musica = musica::all();
+        $musica = Musica::all();
 
         if (count($musica) > 0) {
             return response()->json([

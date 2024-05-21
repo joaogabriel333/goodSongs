@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('titulo', 120)->nullable(false);
             $table->integer('duracao')->nullable(false);
-            $table->string('artista')->unique()->nullable(false);
-            $table->string('genero' )->unique()->nullable(false);
-            $table->string('nacionalidade')->nullable(false);
-            $table->date('ano_lancamenro')->nullable(false);
-            $table->string('album')->nullable(true);
+            $table->string('artista', 120)->nullable(false);
+            $table->string('genero', 120 )->nullable(false);
+            $table->string('nacionalidade', 120)->nullable(false);
+            $table->date('ano_lancamento')->nullable(false);
+            $table->string('album', 120)->nullable(true);
             $table->timestamps();
         });
     }
