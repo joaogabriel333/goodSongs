@@ -72,7 +72,7 @@ class MusicaController extends Controller
         ]);
     }
 
-   /* public function editarMusica(MusicaController $request)
+   public function editarMusica(MusicaController $request)
     {
         $musica = Musica::find($request->id);
         if (!isset($musica)) {
@@ -111,7 +111,7 @@ class MusicaController extends Controller
             'status' => true,
             'message' => 'Musica atualizada.'
         ]);
-    }*/
+    }
 
     public function pesquisarPorId(Request $request)
     {
